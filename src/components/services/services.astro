@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+import Service from './service.astro';
+const services = await getCollection('services');
+
+---
+
+<section id="services">
+    <h2 class="heading"><span>Services</span></h2>
+
+    <div class="content">
+      {services.map(service => <Service service={service} />)}
+     
+    </div>
+  </section>
+
+  <style>
+   #services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+   }
+   .content {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+   }
+   /* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (ax-width: 768px) {
+  .content {
+   
+    grid-template-columns: repeat(2,1fr);
+   
+   }
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .content {
+   
+    grid-template-columns: 1fr;
+    gap: 2rem;
+   }
+}
+  </style>

@@ -1,0 +1,102 @@
+---
+import ContactForm from "./contact-form.astro";
+---
+
+<div class="fixed-contact" id="fixed-contact">
+    <button class="contact-btn"><i class="fa-solid fa-envelope"></i></button>
+    <div class="contact-content">
+        <h3>Contact Us </h3>
+        <button class="cancel">X</button>
+        <ContactForm />
+    </div>
+    
+</div>
+
+<style>
+    .fixed-contact { 
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 25rem;
+        z-index: 6000;
+    }
+     .contact-content {
+        /* display: none; */
+        bottom: 1.5rem;
+        right: 1.5rem;
+        position: absolute;
+        display: none;
+         width: 100%;
+         border: 3px solid black;
+    padding: 1rem;
+    z-index: 5000;
+    border-radius: 0.4rem;
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+    .contact-btn {
+        bottom: 1rem;
+        right: 1rem;
+        cursor: pointer;
+        border: none;
+        height: 2.5rem;
+        width: 2.5rem;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+      
+        background-color: black;
+        color: white;
+        font-size: 1.2rem;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+    .contact-btn:hover {
+        background-color: gray;
+    }
+
+    .cancel {
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    font-weight: bold;
+    background-color: black;
+   }
+   .cancel:hover {
+    background-color: gray;
+   }
+   
+   @media only screen and (max-width: 600px) {
+    .contact{
+        width: 100%;
+       
+    }
+ .contact-content {
+    left: 0;
+    right: 0;
+    width: auto; 
+    margin: 0.8rem;
+
+ }
+}
+</style>
+
+<script>
+    const emailBtn = document.querySelector(".contact-btn") as HTMLButtonElement;
+    const cancelBtn = document.querySelector(".cancel") as HTMLButtonElement;
+    const content = document.querySelector(".contact-content") as HTMLDivElement;
+
+    emailBtn.addEventListener("click", ()=> { 
+        content.style.display = "block"
+
+    })
+    cancelBtn.addEventListener("click", ()=> {
+         content.style.display = "none"
+    })
+</script>

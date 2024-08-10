@@ -1,0 +1,110 @@
+<header class="nav-bar">
+    
+    <nav>
+        <h2 class="logo"> Company Name</h2>
+        <ul>
+           
+            <li><a href="#home" class="link">Home</a></li>
+            <li><a href="#about" class="link">Our Team</a></li>
+            <li><a href="#services" class="link">Services</a></li>
+            <li><a href="#projects" class="link">Our Work</a></li>
+            <li><a href="#contact" class="link">Contact Us</a></li>
+        </ul>
+    </nav>
+    <div class="social-media-links">
+        <ul>
+            <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i> </a></li>
+            <li><a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> </a></li>
+            <li><a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i> </a></li>
+        </ul>
+    </div>
+</header>
+
+<style>
+    header {
+        position: sticky;
+        top: 0;
+        display: flex;
+        
+        flex-direction: column;
+        align-items: center;
+        height: 100dvh;
+        width: 16rem;
+        background-color: var(--header-bg-color);
+        font-size: 1.2rem;
+        justify-content: center;
+    }
+  
+    nav {
+        text-align: center;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+       
+       
+    }
+
+    header li {
+        list-style: none;
+       margin-block: 1.3rem; 
+       
+      
+    }
+    nav a {
+        transition: all 0.3s ease-in-out;
+    }
+   
+    nav li:hover a{
+        display: block;
+        /* transform: translateX(1rem); */
+        color: #10ac84;
+    }
+    .logo {
+        font-weight: bold;
+        /* font-size: 1.1rem; */
+        font-size: 1.6rem;
+    }
+    .social-media-links {
+        margin-top: auto;
+    }
+    .social-media-links ul {
+        display: flex;
+        gap: 1rem;
+    }
+    .social-media-links li {
+        height: 2rem;
+        width: 2rem;
+        background-color: #222f3e;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        border: 2px solid white;
+    }
+    .social-media-links a {
+        color: white;
+    }
+    .social-media-links a:hover i{
+        color: goldenrod; 
+    }
+ .link {
+    transition: transform 0.4s ease;
+}
+
+.link.active {
+    font-weight: bold;
+    display: block;
+    color: #27ae60;
+    transform: translateX(1rem); /* Adjust the value as needed */
+}
+
+    @media only screen and (max-width: 600px) {
+        header {
+           position: fixed;
+           left: -300px;
+        }
+}
+</style>
+

@@ -1,0 +1,38 @@
+---
+const {service, animateClass} = Astro.props
+---
+
+<div class="service">
+    <h4 class="service-title">{service.data.title}</h4>
+    <div class="service-content">
+      <figure>
+        
+      </figure>
+      <p class="service-description">
+        {service.data.description}
+      </p>
+    </div>
+  </div>
+
+  <style>
+    .service {
+  flex: 1;
+  background-color: var( --card-color);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;  
+  transition: all 0.3s linear;  
+}
+h4 {
+  padding-block: 0.6rem;
+}
+figure {
+  height: 10rem;
+  background-color: black;
+}
+p{
+  padding: 2rem 1rem;
+}
+
+.service:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+  </style>

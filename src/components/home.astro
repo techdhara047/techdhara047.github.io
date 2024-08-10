@@ -1,0 +1,64 @@
+<section class="home" id="home">
+    <div class="content">
+     <h1>Company Name</h1>
+     <p>We are a team of web developers dedicated to crafting modern, responsive, and visually appealing websites. Specializing in custom solutions, we tailor each project to meet the unique needs of our clients. Whether you're a small business or a growing brand, we're here to help you build a strong online presence with user-friendly designs and cutting-edge technology.</p>
+    <ul class="social-media-links">
+        <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i> </a></li>
+        <li><a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> </a></li>
+        <li><a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i> </a></li>
+    </ul>
+    <a href="#projects" class="btn"> See Our Work</a>
+</div>
+</section>
+
+<style>
+    .home {
+        display: flex;
+        align-items: center;
+    }
+.content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex: 1;
+    height: 100%;
+}
+h1 {
+    font-size: clamp(1rem, 20vw,2.5rem);
+}
+p {
+    line-height: 1.5rem;
+    font-size: 1.2rem;
+    text-align: center;
+}
+.social-media-links {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1.4rem;
+    
+}
+.social-media-links a {
+    
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    background-color: #d63031;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    transition: 0.3s ease-in-out;
+
+}
+.social-media-links a i {
+    color: white;
+}
+.social-media-links a:hover {
+    background-color: green;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+</style>

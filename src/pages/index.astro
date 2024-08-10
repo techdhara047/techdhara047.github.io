@@ -1,6 +1,15 @@
 ---
+import About from "../components/about.astro";
+import ContactUs from "../components/contact/contact-us.astro";
+import Contact from "../components/contact/contact-form.astro";
+import FixedContact from "../components/contact/fixed-contact.astro";
+import Header from "../components/header.astro";
+import Home from "../components/home.astro";
+import Projects from "../components/projects.astro";
+import Service from "../components/services/services.astro";
+import '../styles/global.css'
 
----
+---s
 
 <html lang="en">
 	<head>
@@ -8,9 +17,94 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Company Name</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body>	
+		<button class="theme-btn"><span class="light-icon"><i class="fa-solid fa-sun"></i></span><span class="dark-icon"><i class="fa-solid fa-moon"></i></span></button>
+		<button class="menu-btn"><i class="fa-solid fa-bars"></i></button>
+		<div class="container">
+			
+			<Header />
+			<main class="main">
+				
+				<!-- Home Section -->
+				<Home />
+				<!-- about us -->
+				<About />
+				<!-- services -->
+				<Service />
+				<!-- our projects -->
+				<Projects />
+				<!-- contact us -->
+				 <ContactUs />
+				
+			</main>
+		</div>
+		<!-- contact us -->
+		<!-- <FixedContact /> -->
 	</body>
 </html>
+
+<script>
+const init = () => {
+	const theme = localStorage.getItem("my-theme") || "";
+	document.documentElement.setAttribute('data-theme', theme);
+
+}
+init();
+
+	//toggle theme
+	const themeBtn = document.querySelector(".theme-btn") as HTMLButtonElement;
+	const lightIcon = document.querySelector(".light-icon") as HTMLSpanElement;
+	const darkIcon = document.querySelector(".dark-icon") as HTMLSpanElement;
+	themeBtn.addEventListener("click", () => {
+		const theme = localStorage.getItem("my-theme") || "";
+		const newTheme = !theme ?"dark":""
+		document.documentElement.setAttribute('data-theme', newTheme);
+		if(!theme) {
+			//change to dark theme
+			localStorage.setItem("my-theme","dark");
+			lightIcon.style.display = "none";
+			darkIcon.style.display = "inline";
+		}else{
+			//change to light theme
+			localStorage.setItem("my-theme","");
+			lightIcon.style.display = "inline";
+			darkIcon.style.display = "none";
+		}
+	})
+
+
+	document.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll<HTMLAnchorElement>('.link');
+    const sections = document.querySelectorAll<HTMLDivElement>('section');
+  
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5  // Adjust this value based on when you want the effect to trigger
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+				const targetElement = (document.querySelector(`a[href="#${id}"]`) as HTMLAnchorElement);
+                targetElement.classList.add('active');
+				 // Update the URL without reloading the page
+				 history.pushState(null, '', `#${id}`);
+				
+            } else {
+                const id = entry.target.getAttribute('id');
+                (document.querySelector(`a[href="#${id}"]`) as HTMLAnchorElement).classList.remove('active');
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+});
+
+</script>

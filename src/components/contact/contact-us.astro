@@ -1,0 +1,25 @@
+---
+import ContactForm from "./contact-form.astro";
+---
+
+<section class="contact-us" id="contact">
+    <h2>Contact Us</h2>
+    <div class="content">
+        <ContactForm />
+    </div>
+</section>
+<style>
+   .contact-us {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+   }
+    .content {
+        /* border: 2px solid var(--text-color); */
+        width: 30rem;
+        padding: 1rem;
+        background-color: var( --card-color);
+    }
+</style>
