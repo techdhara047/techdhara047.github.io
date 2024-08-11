@@ -1,6 +1,6 @@
 {
   "name": "Salman Khan",
   "role": ["Front-End Developer", "Marketing"],
-  "description": "Creative Front-End Developer specializing in React, Material-UI, and responsive design.",
+  "description": "Creative Front-End Developer specializing in React,Redux, Material-UI, and responsive design.",
   "image": "./poc.jpg"
 }
