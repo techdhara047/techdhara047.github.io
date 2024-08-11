@@ -80,6 +80,16 @@ section > h2 {
   border: 1px solid var(--text-color);
   border-radius: 50%;
 }
+
+.hidden {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: 0.3s ease-in;
+}
+.show {
+  opacity: 1;
+  transform: translateY(0%);
+}
 @media only screen and (max-width: 600px) {
   section {
     /* min-height: auto;

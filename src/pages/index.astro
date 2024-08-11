@@ -91,20 +91,41 @@ import ThemeButton from "../components/theme-button.astro";
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-		console.log(entry,entry.target);
+	
 		
             if (entry.isIntersecting) {
                 const id = entry.target.getAttribute('id');
+
 				const links = document.querySelectorAll<HTMLAnchorElement>(`a[href="#${id}"]`)
 				links.forEach(link => link.classList.add('active'));
 		
 			 
 				 // Update the URL without reloading the page
 				 history.pushState(null, '', `#${id}`);
+
+				 // add animation to home 
+				 if(id == 'home') {
+					const hiddenElements = document.querySelectorAll(`#home .hidden`);
+
+				// Type-cast NodeList to a more specific type if you know the element type
+				// For example, if you know they are HTMLDivElements, you can do this:
+				hiddenElements.forEach((element) => {
+				if (element instanceof HTMLElement) {
+					element.classList.add('show');
+					// element.addEventListener('click', (event) => {
+					// // Your event handler code here
+					// console.log(`Element clicked:`, event.currentTarget);
+					// });
+				}
+				});
+					
+					
+					
+				 }
 				
             } else {
                 const id = entry.target.getAttribute('id');
-				console.log("remove "+id);
+				
 				
                 document.querySelectorAll<HTMLAnchorElement>(`a[href="#${id}"]`).forEach(link => link.classList.remove('active'));
             }
