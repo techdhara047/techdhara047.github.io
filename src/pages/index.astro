@@ -32,8 +32,10 @@ import ThemeButton from "../components/theme-button.astro";
 		
 
 		</div>
+
 		<div class="container">
 			<MobileNav />
+		
 			<div class="box">
 				<RightNav />
 				<main class="main">
@@ -94,13 +96,17 @@ init();
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const id = entry.target.getAttribute('id');
-				document.querySelectorAll<HTMLAnchorElement>(`a[href="#${id}"]`).forEach(link => link.classList.add('active'));
-			
+				const links = document.querySelectorAll<HTMLAnchorElement>(`a[href="#${id}"]`)
+				links.forEach(link => link.classList.add('active'));
+			 console.log(id, links);
+			 
 				 // Update the URL without reloading the page
 				 history.pushState(null, '', `#${id}`);
 				
             } else {
                 const id = entry.target.getAttribute('id');
+				console.log("remove "+id);
+				
                 document.querySelectorAll<HTMLAnchorElement>(`a[href="#${id}"]`).forEach(link => link.classList.remove('active'));
             }
         });
