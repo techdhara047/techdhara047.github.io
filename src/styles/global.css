@@ -86,7 +86,7 @@ section > h2 {
   section {
     /* min-height: auto;
     height: auto; */
-    padding: 3rem 1rem;
+    padding: 3rem 1.1rem;
   }
   .theme-toggle-button {
     top: 0.2rem;

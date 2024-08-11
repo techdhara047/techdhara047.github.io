@@ -85,20 +85,24 @@ init();
 	document.addEventListener('DOMContentLoaded', () => {
     const links = document.querySelectorAll<HTMLAnchorElement>('.link');
     const sections = document.querySelectorAll<HTMLDivElement>('section');
+		console.log(sections);
+		
   
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.5  // Adjust this value based on when you want the effect to trigger
+        threshold: 0.2  // Adjust this value based on when you want the effect to trigger
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
+		console.log(entry,entry.target);
+		
             if (entry.isIntersecting) {
                 const id = entry.target.getAttribute('id');
 				const links = document.querySelectorAll<HTMLAnchorElement>(`a[href="#${id}"]`)
 				links.forEach(link => link.classList.add('active'));
-			 console.log(id, links);
+		
 			 
 				 // Update the URL without reloading the page
 				 history.pushState(null, '', `#${id}`);
@@ -110,7 +114,7 @@ init();
                 document.querySelectorAll<HTMLAnchorElement>(`a[href="#${id}"]`).forEach(link => link.classList.remove('active'));
             }
         });
-    }, observerOptions);
+    },observerOptions);
 
     sections.forEach(section => {
         observer.observe(section);

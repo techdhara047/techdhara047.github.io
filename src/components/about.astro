@@ -6,7 +6,7 @@ const profiles = await getCollection('about');
 
 ---
 
-<section class="about" id="about">
+<section id="about">
     <h2>Our Team</h2>
     <div class="content">
         {profiles.map(profile => (<div class="profile">
@@ -21,11 +21,11 @@ const profiles = await getCollection('about');
 </section>
 
 <style>
-    .about {
+    #about {
         gap: 4rem;
     
     }
-    .about > h2 {
+    #about > h2 {
         margin: 2rem;
     }
     .content {
