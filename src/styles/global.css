@@ -13,6 +13,7 @@ html {
   --text-color: #2f3640;
   --header-bg-color: #dcdde1;
   --card-color: white;
+  --vh: 100vh;
 }
 [data-theme="dark"] {
   --bg-color: #4b4b4b;
@@ -44,7 +45,7 @@ main {
 }
 section {
   text-align: center;
-  min-height: 100dvh;
+  min-height: var(--vh);
   /* display: flex; */
   /* justify-content: center; */
   /* align-items: center; */
