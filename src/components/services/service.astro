@@ -1,4 +1,6 @@
 ---
+import Image from 'astro/components/Image.astro';
+
 const {service, animateClass} = Astro.props
 ---
 
@@ -6,7 +8,8 @@ const {service, animateClass} = Astro.props
     <h4 class="service-title">{service.data.title}</h4>
     <div class="service-content">
       <figure>
-        
+      
+        <Image src={service.data.image} format="avif" alt="service"/>
       </figure>
       <p class="service-description">
         {service.data.description}
@@ -25,8 +28,12 @@ h4 {
   padding-block: 0.6rem;
 }
 figure {
-  height: 10rem;
-  background-color: black;
+  height: 11rem;
+ 
+}
+figure > img {
+  width: 100%;
+  height: 100%;
 }
 p{
   padding: 2rem 1rem;
@@ -34,5 +41,11 @@ p{
 
 .service:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+@media only screen and (max-width: 600px) {
+  figure {
+    height: 16rem;
+  }
+   
 }
   </style>

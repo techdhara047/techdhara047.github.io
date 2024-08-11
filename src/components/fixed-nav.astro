@@ -1,0 +1,77 @@
+---
+import Header from "./header.astro";
+
+---
+<div class="overlay"></div>
+<div class="fixed-nav">  
+    <div class="content"><button class="cancel-menu">
+        X
+            </button><Header /></div>
+</div>
+
+<style>
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0,0,0,0.7);
+        
+    }
+    .cancel-menu {
+        height: 3rem;
+        width: 3rem;
+        border-radius: 50%;
+        border: none;
+        background-color: black;
+        color: white;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        z-index: 20000;
+    }
+    .fixed-nav {
+        width: 22rem;
+        transform: translateX(-100%);
+         z-index: 10000;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+           
+            transition: transform 0.3s ease-in-out;
+          }
+    .content {
+        position: relative;
+        height: 100%;
+        z-index: 20000;
+    }
+    .fixed-nav.show {
+        transform: translateX(0%); /* Show the fixed nav when the class 'show' is added */
+}
+    /* @media only screen and (max-width: 600px) {
+        .fixed-nav {
+            display: block;
+        }
+        } */
+    </style>
+
+    <script>
+       const fixedNav =  document.querySelector('.fixed-nav') as HTMLDivElement;
+       const overlay = document.querySelector('.overlay') as HTMLDivElement
+       
+        (document.querySelector('.overlay') as HTMLDivElement).addEventListener('click', function() {
+
+            fixedNav.classList.remove('show');
+            overlay.style.display = 'none';
+});
+
+(document.querySelector('.cancel-menu') as HTMLButtonElement).addEventListener('click', function() {
+    fixedNav.classList.remove('show');
+    overlay.style.display = 'none';
+});
+
+    </script>

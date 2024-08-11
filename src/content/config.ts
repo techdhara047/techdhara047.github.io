@@ -13,10 +13,12 @@ const developerProfile = defineCollection({
 
 const servicesCollection = defineCollection({
   type: "content",
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      image: image(),
+    }),
 });
 const worksCollection = defineCollection({
   type: "content",

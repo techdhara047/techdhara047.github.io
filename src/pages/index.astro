@@ -8,6 +8,8 @@ import Home from "../components/home.astro";
 import Projects from "../components/projects.astro";
 import Service from "../components/services/services.astro";
 import '../styles/global.css'
+import RightNav from "../components/right-nav.astro";
+import FixedNav from "../components/fixed-nav.astro";
 
 ---s
 
@@ -23,9 +25,10 @@ import '../styles/global.css'
 	<body>	
 		<button class="theme-btn"><span class="light-icon"><i class="fa-solid fa-sun"></i></span><span class="dark-icon"><i class="fa-solid fa-moon"></i></span></button>
 		<button class="menu-btn"><i class="fa-solid fa-bars"></i></button>
+		<FixedNav />
 		<div class="container">
 			
-			<Header />
+			<RightNav />
 			<main class="main">
 				
 				<!-- Home Section -->
@@ -47,6 +50,16 @@ import '../styles/global.css'
 </html>
 
 <script>
+	// menu button
+	const menuBtn = document.querySelector(".menu-btn") as HTMLButtonElement;
+	menuBtn.onclick = () => {
+		// hide overlay
+		(document.querySelector(".overlay") as HTMLDivElement).style.display = "block";
+// hide nav bar
+(document.querySelector('.fixed-nav') as HTMLDivElement).classList.add("show")
+	}
+
+	//end
 const init = () => {
 	const theme = localStorage.getItem("my-theme") || "";
 	document.documentElement.setAttribute('data-theme', theme);
@@ -90,14 +103,21 @@ init();
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const id = entry.target.getAttribute('id');
-				const targetElement = (document.querySelector(`a[href="#${id}"]`) as HTMLAnchorElement);
-                targetElement.classList.add('active');
+				document.querySelectorAll<HTMLAnchorElement>(`a[href="#${id}"]`).forEach(link => link.classList.add('active'));
+				 // Check if fixed-nav has 'show' class, then hide it
+				 const fixedNav = document.querySelector('.fixed-nav');
+				if (fixedNav && fixedNav.classList.contains('show')) {
+					const overlay = document.querySelector('.overlay') as HTMLDivElement;
+					overlay.style.display = 'none';
+					fixedNav.classList.remove('show'); // Hide the fixed-nav
+
+				}
 				 // Update the URL without reloading the page
 				 history.pushState(null, '', `#${id}`);
 				
             } else {
                 const id = entry.target.getAttribute('id');
-                (document.querySelector(`a[href="#${id}"]`) as HTMLAnchorElement).classList.remove('active');
+                document.querySelectorAll<HTMLAnchorElement>(`a[href="#${id}"]`).forEach(link => link.classList.remove('active'));
             }
         });
     }, observerOptions);

@@ -22,14 +22,12 @@
 
 <style>
     header {
-        position: sticky;
-        top: 0;
         display: flex;
-        
         flex-direction: column;
         align-items: center;
-        height: 100dvh;
-        width: 16rem;
+        height: 100%;
+        /* height: 100dvh; */
+        
         background-color: var(--header-bg-color);
         font-size: 1.2rem;
         justify-content: center;
@@ -51,9 +49,9 @@
        
       
     }
-    nav a {
+    /* nav a {
         transition: all 0.3s ease-in-out;
-    }
+    } */
    
     nav li:hover a{
         display: block;
@@ -100,11 +98,6 @@
     transform: translateX(1rem); /* Adjust the value as needed */
 }
 
-    @media only screen and (max-width: 600px) {
-        header {
-           position: fixed;
-           left: -300px;
-        }
-}
+  
 </style>
 

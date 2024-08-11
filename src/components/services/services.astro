@@ -28,7 +28,7 @@ const services = await getCollection('services');
     gap: 2rem;
    }
    /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (ax-width: 768px) {
+@media only screen and (max-width: 1100px) {
   .content {
    
     grid-template-columns: repeat(2,1fr);
@@ -42,5 +42,6 @@ const services = await getCollection('services');
     grid-template-columns: 1fr;
     gap: 2rem;
    }
+   
 }
   </style>
