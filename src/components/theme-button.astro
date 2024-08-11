@@ -14,29 +14,44 @@ div {
   font-size: 1.2rem;
   cursor: pointer;
 }
-
+.light-icon ,.dark-icon {
+  display: none;
+}
 </style>
 
 <script>
-
-    //toggle theme
+	//toggle theme
 	const themeBtn = document.querySelector(".theme-btn") as HTMLDivElement;
 	const lightIcon = document.querySelector(".light-icon") as HTMLSpanElement;
 	const darkIcon = document.querySelector(".dark-icon") as HTMLSpanElement;
+const init = () => {
+	const theme = localStorage.getItem("my-theme") || "";
+	document.documentElement.setAttribute('data-theme', theme);
+	if(!theme) {
+		darkIcon.style.display = "inline";
+		
+	}else{
+		lightIcon.style.display = "inline";
+	}
+
+}
+init();
+    
 	themeBtn.addEventListener("click", () => {
     
         
 		const theme = localStorage.getItem("my-theme") || "";
 		const newTheme = !theme ?"dark":""
 		document.documentElement.setAttribute('data-theme', newTheme);
-		if(!theme) {
+		localStorage.setItem("my-theme",newTheme);
+		if(!newTheme) {
 			//change to dark theme
-			localStorage.setItem("my-theme","dark");
+		
 			lightIcon.style.display = "none";
 			darkIcon.style.display = "inline";
 		}else{
 			//change to light theme
-			localStorage.setItem("my-theme","");
+			
 			lightIcon.style.display = "inline";
 			darkIcon.style.display = "none";
 		}

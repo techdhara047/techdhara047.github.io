@@ -72,9 +72,6 @@ section > h2 {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.dark-icon {
-  display: none;
-}
 .theme-toggle-button {
   position: fixed;
   bottom: 1.5rem;
