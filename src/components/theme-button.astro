@@ -1,0 +1,48 @@
+<div class="theme-btn">
+    <span class="light-icon"><i class="fa-solid fa-sun">
+        </i></span><span class="dark-icon"><i class="fa-solid fa-moon"></i></span>
+    </div>
+<style>
+.theme-btn {
+ 
+  border: none;
+  border-radius: 50%;
+  height: 2.5rem;
+  width: 2.5rem;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  cursor: pointer;
+}
+.theme-btn:hover {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+</style>
+
+<script>
+    //toggle theme
+	const themeBtn = document.querySelector(".theme-btn") as HTMLDivElement;
+	const lightIcon = document.querySelector(".light-icon") as HTMLSpanElement;
+	const darkIcon = document.querySelector(".dark-icon") as HTMLSpanElement;
+	themeBtn.addEventListener("click", () => {
+        console.log("clciked...");
+        
+		const theme = localStorage.getItem("my-theme") || "";
+		const newTheme = !theme ?"dark":""
+		document.documentElement.setAttribute('data-theme', newTheme);
+		if(!theme) {
+			//change to dark theme
+			localStorage.setItem("my-theme","dark");
+			lightIcon.style.display = "none";
+			darkIcon.style.display = "inline";
+		}else{
+			//change to light theme
+			localStorage.setItem("my-theme","");
+			lightIcon.style.display = "inline";
+			darkIcon.style.display = "none";
+		}
+	})
+</script>

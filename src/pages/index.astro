@@ -10,6 +10,8 @@ import Service from "../components/services/services.astro";
 import '../styles/global.css'
 import RightNav from "../components/right-nav.astro";
 import FixedNav from "../components/fixed-nav.astro";
+import MobileNav from "../components/mobile-nav.astro";
+import ThemeButton from "../components/theme-button.astro";
 
 ---s
 
@@ -23,26 +25,33 @@ import FixedNav from "../components/fixed-nav.astro";
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 	</head>
 	<body>	
-		<button class="theme-btn"><span class="light-icon"><i class="fa-solid fa-sun"></i></span><span class="dark-icon"><i class="fa-solid fa-moon"></i></span></button>
-		<button class="menu-btn"><i class="fa-solid fa-bars"></i></button>
+		<div class="theme-toggle-button">
+			<ThemeButton />
+		</div>
 		<FixedNav />
+		
+
+		</div>
 		<div class="container">
+			<MobileNav />
+			<div class="box">
+				<RightNav />
+				<main class="main">
+					
+					<!-- Home Section -->
+					<Home />
+					<!-- about us -->
+					<About />
+					<!-- services -->
+					<Service />
+					<!-- our projects -->
+					<Projects />
+					<!-- contact us -->
+					 <ContactUs />
+					
+				</main>
+			</div>
 			
-			<RightNav />
-			<main class="main">
-				
-				<!-- Home Section -->
-				<Home />
-				<!-- about us -->
-				<About />
-				<!-- services -->
-				<Service />
-				<!-- our projects -->
-				<Projects />
-				<!-- contact us -->
-				 <ContactUs />
-				
-			</main>
 		</div>
 		<!-- contact us -->
 		<!-- <FixedContact /> -->
@@ -68,26 +77,7 @@ const init = () => {
 }
 init();
 
-	//toggle theme
-	const themeBtn = document.querySelector(".theme-btn") as HTMLButtonElement;
-	const lightIcon = document.querySelector(".light-icon") as HTMLSpanElement;
-	const darkIcon = document.querySelector(".dark-icon") as HTMLSpanElement;
-	themeBtn.addEventListener("click", () => {
-		const theme = localStorage.getItem("my-theme") || "";
-		const newTheme = !theme ?"dark":""
-		document.documentElement.setAttribute('data-theme', newTheme);
-		if(!theme) {
-			//change to dark theme
-			localStorage.setItem("my-theme","dark");
-			lightIcon.style.display = "none";
-			darkIcon.style.display = "inline";
-		}else{
-			//change to light theme
-			localStorage.setItem("my-theme","");
-			lightIcon.style.display = "inline";
-			darkIcon.style.display = "none";
-		}
-	})
+	
 
 
 	document.addEventListener('DOMContentLoaded', () => {
@@ -105,8 +95,7 @@ init();
             if (entry.isIntersecting) {
                 const id = entry.target.getAttribute('id');
 				document.querySelectorAll<HTMLAnchorElement>(`a[href="#${id}"]`).forEach(link => link.classList.add('active'));
-				 // Check if fixed-nav has 'show' class, then hide it
-				
+			
 				 // Update the URL without reloading the page
 				 history.pushState(null, '', `#${id}`);
 				

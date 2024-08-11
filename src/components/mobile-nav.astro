@@ -1,0 +1,41 @@
+---
+import ThemeButton from "./theme-button.astro";
+---
+
+<div class="mobile-nav">
+	<button class="menu-btn"><i class="fa-solid fa-bars"></i></button>
+ <ThemeButton />
+</div>
+<style>
+    .mobile-nav {
+       
+       
+        background-color: red;
+        display: none;
+        padding: 1rem 2rem;
+        background-color: var(--header-bg-color);
+    }
+    .menu-btn {
+ color: var(--text-color);
+  background-color: inherit;
+  border-radius: 3px;
+ padding: 0.4rem 0.8rem;
+ border: 1px solid var(--text-color);
+  /* height: 3rem;
+  width: 3rem; */
+  /* border-radius: 50%; */
+  font-size: 1.3rem;
+  z-index: 9000;
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+}
+    @media only screen and (max-width: 600px) {
+        .mobile-nav {
+            display: flex;
+            justify-content: space-between;
+    }
+    .menu-btn {
+        position: static;
+    }
+}
+
+</style>
