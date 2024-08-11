@@ -5,7 +5,7 @@ import Header from "./header.astro";
 <div class="overlay"></div>
 <div class="fixed-nav">  
     <div class="content"><button class="cancel-menu">
-        X
+        <i class="fa-sharp fa-solid fa-xmark"></i>
             </button><Header /></div>
 </div>
 
@@ -32,6 +32,10 @@ import Header from "./header.astro";
         top: 2rem;
         right: 2rem;
         z-index: 20000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
     }
     .fixed-nav {
         width: 18rem;
