@@ -50,6 +50,7 @@ import FixedNav from "../components/fixed-nav.astro";
 </html>
 
 <script>
+	
 	// menu button
 	const menuBtn = document.querySelector(".menu-btn") as HTMLButtonElement;
 	menuBtn.onclick = () => {
@@ -105,13 +106,7 @@ init();
                 const id = entry.target.getAttribute('id');
 				document.querySelectorAll<HTMLAnchorElement>(`a[href="#${id}"]`).forEach(link => link.classList.add('active'));
 				 // Check if fixed-nav has 'show' class, then hide it
-				 const fixedNav = document.querySelector('.fixed-nav');
-				if (fixedNav && fixedNav.classList.contains('show')) {
-					const overlay = document.querySelector('.overlay') as HTMLDivElement;
-					overlay.style.display = 'none';
-					fixedNav.classList.remove('show'); // Hide the fixed-nav
-
-				}
+				
 				 // Update the URL without reloading the page
 				 history.pushState(null, '', `#${id}`);
 				

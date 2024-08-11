@@ -12,6 +12,7 @@ import Header from "./header.astro";
 <style>
     .overlay {
         display: none;
+        z-index: 19000;
         position: fixed;
         top: 0;
         bottom: 0;
@@ -35,7 +36,7 @@ import Header from "./header.astro";
     .fixed-nav {
         width: 22rem;
         transform: translateX(-100%);
-         z-index: 10000;
+        z-index: 20000;
             position: fixed;
             top: 0;
             bottom: 0;
@@ -73,5 +74,13 @@ import Header from "./header.astro";
     fixedNav.classList.remove('show');
     overlay.style.display = 'none';
 });
+
+// hide this nav on nav link click 
+document.querySelectorAll<HTMLAnchorElement>(`.fixed-nav .link`).forEach(link => {
+    link.addEventListener("click", ()=> {
+    fixedNav.classList.remove('show');
+    overlay.style.display = 'none';
+})
+})
 
     </script>
