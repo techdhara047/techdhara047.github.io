@@ -1,6 +1,12 @@
+---
+import Image from 'astro/components/Image.astro'
+import LogoContainer from './logo-container.astro'
+
+---
+
 <section id="home">
     <div class="content">
-     <h1 class="hidden">TechDhara</h1>
+     <h1 class="hidden"><LogoContainer /></h1>
      <p class="hidden">We are a team of web developers dedicated to crafting modern, responsive, and visually appealing websites. Specializing in custom solutions, we tailor each project to meet the unique needs of our clients. Whether you're a small business or a growing brand, we're here to help you build a strong online presence with user-friendly designs and cutting-edge technology.</p>
     <ul class="social-media-links hidden">
         <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i> </a></li>
@@ -38,8 +44,10 @@
     height: 100%;
 }
 h1 {
+  
     font-size: clamp(1rem, 20vw,2.5rem);
 }
+
 p {
     line-height: 1.5rem;
     font-size: 1.2rem;

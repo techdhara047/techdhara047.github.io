@@ -1,0 +1,27 @@
+---
+import Image from 'astro/components/Image.astro'
+import logo from '../assets/logo.png'
+---
+
+<div class="logo-container">
+    <span>Tech</span><Image src={logo} alt="logo" format="avif"/>
+</div>
+
+
+<style>
+    div {
+        color: #222f3e;
+    }
+    .logo-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.2rem;
+       
+    }
+    img {
+        height: 1.3em;
+        width: 1.8em;
+       
+    }
+</style>
