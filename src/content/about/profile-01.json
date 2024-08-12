@@ -1,6 +1,7 @@
 {
-  "name": "Ashutosh Singh",
+  "name": "Salaman Khan",
+  "designation": "CEO",
   "role": ["Full Stack Developer"],
-  "description": "Experienced Full Stack Developer with expertise in React,Astro, Node.js, and MongoDB.",
-  "image": "./pic4.jpeg"
+  "description": "Creative Front-End Developer specializing in React,Redux, Material-UI, and responsive design.",
+  "image": "./pic1.jpg"
 }

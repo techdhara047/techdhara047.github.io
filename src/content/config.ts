@@ -5,6 +5,7 @@ const developerProfile = defineCollection({
   schema: ({ image }) =>
     z.object({
       name: z.string(),
+      designation: z.string(),
       role: z.array(z.string()),
       description: z.string(),
       image: image(),
