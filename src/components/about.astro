@@ -18,7 +18,8 @@ const profiles = await getCollection('about');
             </ul>}
             
             <p>{profile.data.description}</p>
-            <a class="btn" href={profile.data.info} target="_blank">Know More</a>
+            {profile.data.info.length > 0 &&  <a class="btn" href={profile.data.info} target="_blank">Know More</a>}
+           
         </div>))}
     </div>
 </section>
