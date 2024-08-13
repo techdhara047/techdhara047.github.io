@@ -18,6 +18,7 @@ const profiles = await getCollection('about');
             </ul>}
             
             <p>{profile.data.description}</p>
+            <a class="btn" href={profile.data.info} target="_blank">Know More</a>
         </div>))}
     </div>
 </section>
@@ -43,7 +44,7 @@ const profiles = await getCollection('about');
         flex: 0 0 calc(33.33% - 2rem);
         position: relative;
         background-color: var( --card-color);
-        padding: 1.4rem 0.6rem;
+        padding: 0.8rem 0.6rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -53,15 +54,15 @@ const profiles = await getCollection('about');
         border-radius: 0.6rem;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
         transition: 0.3s ease-in-out;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
     }
     .profile:hover{
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
     }
     figure {
-        margin-block: 1.3rem;
+        margin-top: 1.7rem;
         height: 150px;
         width: 150px;
-        background-color: green;
         border-radius: 50%;
         overflow: hidden;
     }
@@ -80,7 +81,7 @@ const profiles = await getCollection('about');
      }
 .degination {
     position: absolute;
-    top: 0.8rem;
+    top: 0.7rem;
     right:0rem;
     font-size: 0.7rem;
     /* background-color: red; */
@@ -89,7 +90,11 @@ const profiles = await getCollection('about');
     border-bottom-left-radius: 5px;
     background-image: linear-gradient( 135deg, #FCCF31 10%, #F55555 100%);
 }
-
+.btn {
+    margin-top: 0.8rem;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.7rem;
+}
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (max-width: 992px) {
     .profile {

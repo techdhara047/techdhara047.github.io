@@ -9,6 +9,7 @@ const developerProfile = defineCollection({
       role: z.array(z.string()),
       description: z.string(),
       image: image(),
+      info: z.string(),
     }),
 });
 
