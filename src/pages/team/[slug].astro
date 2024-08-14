@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import MainBlogPageLayout from '../../layouts/MainBlogPageLayout.astro';
+import MainPageLayout from '../../layouts/MainPageLayout.astro';
 import {slugify} from '../../utils/utils.js'
 import { Image } from 'astro:assets';
 
@@ -21,61 +22,24 @@ export async function getStaticPaths() {
 
 const { slug } = Astro.params;
 const {profile} = Astro.props;
-console.log(profile);
-
+const {Content} = await profile.render()
 
 ---
 
 <MainBlogPageLayout>
    <div class="about-page">
     <figure>
-        <Image src={profile.data.image} alt="image" format='avif'/>
+        <Image src={profile.data.image} alt="image" format='avif' transition:name='img'/>
     </figure>
-    <h1>{profile.data.name}</h1>
+    <h1 class="text-2xl font-bold">{profile.data.name}</h1>
     <p class="desc">{profile.data.description}</p>
  
     <div class=info>
-            <div class="section">
-                <h2>Education</h2>
-                <ul>
-                    <li><p><strong>Bachelor’s Degree</strong> from National Institute of Technology (NIT) Silchar, Assam</p></li>
-                </ul>
-            </div>
-
-            <div class="section">
-                <h2>Professional Experience</h2>
-                <ul>
-                    <li>7 years of experience in the Information Technology sector</li>
-                    <li>Worked with top-tier MNCs such as IBM and Accenture</li>
-                    <li>Expertise in software development, IT consulting, etc.</li>
-                </ul>
-            </div>
-
-            <div class="section">
-                <h2>Key Achievements</h2>
-                <ul>
-                    <li>Successfully built and delivered 15+ projects across various domains</li>
-                </ul>
-            </div>
-
-            <div class="section">
-                <h2>Skills</h2>
-                <ul>
-                    <li><strong>HTML/CSS:</strong> Semantic HTML, Flexbox, Grid, responsive design.</li>
-                    <li><strong>JavaScript/ES6:</strong> Modern JavaScript features, DOM manipulation, event handling.</li>
-                    <li><strong>Frameworks/Libraries:</strong> React.js, Angular, Vue.js.</li>
-                    <li><strong>State Management:</strong> Redux, Context API, Vuex.</li>
-                    <li><strong>Version Control:</strong> Git/GitHub.</li>
-                    <li><strong>Responsive Design:</strong> Media queries, mobile-first design.</li>
-                    <li><strong>CSS Preprocessors:</strong> SASS, LESS.</li>
-                    <li><strong>Build Tools:</strong> Webpack, Babel, NPM/Yarn.</li>
-                    <li><strong>APIs:</strong> RESTful APIs, GraphQL, AJAX, Axios.</li>
-                    <li><strong>Testing:</strong> Jest, Mocha, Cypress.</li>
-                    <li><strong>UI Libraries:</strong> Bootstrap, Material-UI, Tailwind CSS.</li>
-                    <li><strong>Package Managers:</strong> NPM, Yarn.</li>
-                </ul>
-            </div>
+        <div class="prose">
+         <Content />
         </div>
+
+    </div>
 
    </div>
    

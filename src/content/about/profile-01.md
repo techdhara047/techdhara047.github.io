@@ -10,7 +10,7 @@ info: /team/salaman-khan
 
 ## Education
 
-**Bachelor’s Degree** from National Institute of Technology (NIT) Silchar, Assam
+- **Bachelor’s Degree** from National Institute of Technology (NIT) Silchar, Assam
 
 ## Professional Experience
 

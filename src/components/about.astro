@@ -11,7 +11,7 @@ const profiles = await getCollection('about');
     <div class="content">
         {profiles.map(profile => (<div class="profile">
             <span class="degination">{profile.data.designation}</span>
-            <figure><Image src={profile.data.image} alt="name" format='avif'/></figure>
+            <figure><Image src={profile.data.image} alt="name" format='avif' transition:name='img'/></figure>
             <h2>{profile.data.name}</h2>
             {profile.data.role.length > 0 && <ul class="role">
                 {profile.data.role.map((role: string) => <li>{role}</li>)}
