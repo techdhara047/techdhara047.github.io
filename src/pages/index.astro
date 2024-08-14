@@ -1,67 +1,29 @@
 ---
 import About from "../components/about.astro";
 import ContactUs from "../components/contact/contact-us.astro";
-import Contact from "../components/contact/contact-form.astro";
-import FixedContact from "../components/contact/fixed-contact.astro";
-import Header from "../components/header.astro";
 import Home from "../components/home.astro";
 import Projects from "../components/projects.astro";
 import Service from "../components/services/services.astro";
-import '../styles/global.css'
-import RightNav from "../components/right-nav.astro";
-import FixedNav from "../components/fixed-nav.astro";
-import MobileNav from "../components/mobile-nav.astro";
-import ThemeButton from "../components/theme-button.astro";
+import MainPageLayout from "../layouts/MainPageLayout.astro";
 
----s
+---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="google-site-verification" content="he8JEZNJ6iyHnfLMAO74rp65pER43MjRRx2uDz_ik8E" />
-		<link rel="icon" type="image/svg+xml" href="/logo.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>TechDhara</title>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-	</head>
-	<body>	
-		<div class="theme-toggle-button">
-			<ThemeButton />
-		</div>
-		<FixedNav />
-		
-
-		</div>
-
-		<div class="container">
-			<MobileNav />
-		
-			<div class="box">
-				<RightNav />
-				<main class="main">
-					
-					<!-- Home Section -->
-					<Home />
-					<!-- about us -->
-					<About />
-					<!-- services -->
-					<Service />
-					<!-- our projects -->
-					<Projects />
-					<!-- contact us -->
-					 <ContactUs />
-					
-				</main>
-			</div>
-			
-		</div>
+<MainPageLayout>
+		<!-- Home Section -->
+		<Home />
+		<!-- about us -->
+		<About />
+		<!-- services -->
+		<Service />
+		<!-- our projects -->
+		<Projects />
 		<!-- contact us -->
-		<!-- <FixedContact /> -->
-	</body>
-</html>
+		 <ContactUs />
+		
+</MainPageLayout>
 
 <script>
+
 	
 	// menu button
 	const menuBtn = document.querySelector(".menu-btn") as HTMLButtonElement;
@@ -102,7 +64,7 @@ import ThemeButton from "../components/theme-button.astro";
 		
 			 
 				 // Update the URL without reloading the page
-				 history.pushState(null, '', `#${id}`);
+				//  history.pushState(null, '', `#${id}`);
 
 				 // add animation to home 
 				 if(id == 'home') {

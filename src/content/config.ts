@@ -1,7 +1,7 @@
 import { defineCollection, z } from "astro:content";
 
 const developerProfile = defineCollection({
-  type: "data",
+  type: "content",
   schema: ({ image }) =>
     z.object({
       name: z.string(),

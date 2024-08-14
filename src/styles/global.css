@@ -37,25 +37,18 @@ ul {
 .container {
   width: 100%;
 }
-.box {
+.container .box {
   display: flex;
 }
-main {
+.container .box > main {
   flex: 1;
+  padding: 1rem 2rem;
 }
 section {
   text-align: center;
   min-height: var(--vh);
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  padding: 1rem 2rem;
-  /* flex-direction: column; */
 }
-section:nth-child(odd) {
-}
-section:nth-child(even) {
-}
+
 section > h2 {
   margin-block: 1rem;
   font-size: 2rem;
@@ -93,7 +86,7 @@ section > h2 {
   transform: translateY(0%);
 }
 @media only screen and (max-width: 600px) {
-  section {
+  .box > main {
     /* min-height: auto;
     height: auto; */
     padding: 3rem 1.1rem;

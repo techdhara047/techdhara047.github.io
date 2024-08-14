@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+:root {
+  --bg-color: #f5f6fa;
+  --text-color: #2f3640;
+  --header-bg-color: #dcdde1;
+  --card-color: white;
+  --vh: 100vh;
+}
+[data-theme="dark"] {
+  --bg-color: #4b4b4b;
+  --text-color: white;
+  --header-bg-color: #3d3d3d;
+  --card-color: #5b5b5b;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+.btn {
+  background-color: #2d3436;
+  padding: 0.6rem 1rem;
+  border-radius: 0.2rem;
+  color: white;
+  transition: 0.3s ease-in-out;
+}
+.btn:hover {
+  background-color: #636e72;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}

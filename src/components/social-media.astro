@@ -1,0 +1,38 @@
+---
+const { style, children } = Astro.props;
+---
+
+<ul style={style}>
+    <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i> </a></li>
+    <li><a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> </a></li>
+    <li><a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i> </a></li>
+</ul>
+
+<style>
+    /* .social-media-links {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1.4rem;
+    
+} */
+ a {
+    color: inherit;
+    height: 2em;
+    width: 2em;
+    border-radius: 50%;
+    background-color: #d63031;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    transition: 0.3s ease-in-out;
+
+}
+.social-media-links a i {
+    color: white;
+}
+.social-media-links a:hover {
+    background-color: green;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+</style>
