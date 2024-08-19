@@ -5,5 +5,5 @@ description: Innovative Chief Marketing Officer with a proven track record in dr
 image: ./pic3.jpeg
 role:
   - ""
-info: ""
+showlink: false
 ---

@@ -5,7 +5,7 @@ role:
   - Full Stack Developer
 description: Creative Front-End Developer specializing in React, Redux, Material-UI, and responsive design.
 image: ./pic1.jpg
-info: /team/salaman-khan
+showlink: true
 ---
 
 ## Education

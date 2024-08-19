@@ -1,8 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
-import MainBlogPageLayout from '../../layouts/MainBlogPageLayout.astro';
-import MainPageLayout from '../../layouts/MainPageLayout.astro';
-import {slugify} from '../../utils/utils.js'
+import MainProfilePageLayout from '../../layouts/MainProfilePageLayout.astro';
+import {generateSlug} from '../../utils/utils.js'
 import { Image } from 'astro:assets';
 
 
@@ -14,8 +13,8 @@ export async function getStaticPaths() {
     // }))
 
   const profiles = await getCollection('about');
-  return profiles.map((profile) => ({
-    params: { slug: slugify(profile.data.name) },
+  return profiles.map((profile,index) => ({
+    params: { slug: generateSlug(profile.data.name,index+1) },
     props: { profile },
   }));
 }
@@ -26,7 +25,7 @@ const {Content} = await profile.render()
 
 ---
 
-<MainBlogPageLayout>
+<MainProfilePageLayout>
    <div class="about-page">
     <figure>
         <Image src={profile.data.image} alt="image" format='avif' transition:name='img'/>
@@ -43,7 +42,7 @@ const {Content} = await profile.render()
 
    </div>
    
-</MainBlogPageLayout>
+</MainProfilePageLayout>
 
 <style>
     .about-page {

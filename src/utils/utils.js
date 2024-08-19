@@ -8,3 +8,8 @@ export function slugify(name) {
     .replace(/^-+/, "") // Remove leading hyphens
     .replace(/-+$/, ""); // Remove trailing hyphens
 }
+
+export function generateSlug(name, index) {
+  const baseSlug = slugify(name);
+  return `${baseSlug}-${index}`;
+}

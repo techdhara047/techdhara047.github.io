@@ -9,7 +9,8 @@ const developerProfile = defineCollection({
       role: z.array(z.string()),
       description: z.string(),
       image: image(),
-      info: z.string(),
+      url: z.string().optional(),
+      showlink: z.boolean(),
     }),
 });
 

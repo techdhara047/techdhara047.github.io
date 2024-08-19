@@ -1,15 +1,14 @@
 ---
 import Image from 'astro/components/Image.astro';
 import { getCollection } from 'astro:content';
-
+import {generateSlug} from '../utils/utils.js'
 const profiles = await getCollection('about');
-
 ---
 
 <section id="about">
     <h2>Our Team</h2>
     <div class="content">
-        {profiles.map(profile => (<div class="profile">
+        {profiles.map((profile,index) => (<div class="profile">
             <span class="degination">{profile.data.designation}</span>
             <figure><Image src={profile.data.image} alt="name" format='avif' transition:name='img'/></figure>
             <h2>{profile.data.name}</h2>
@@ -18,8 +17,8 @@ const profiles = await getCollection('about');
             </ul>}
             
             <p>{profile.data.description}</p>
-            {profile.data.info.length > 0 &&  <a class="btn" href={profile.data.info}>Know More</a>}
-           
+          
+            {profile.data.showlink &&  <a class="btn" href={profile.data.url || `/team/${generateSlug(profile.data.name,index+1)}`}>Know More</a>}
         </div>))}
     </div>
 </section>
