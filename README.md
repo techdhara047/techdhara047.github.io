@@ -1,50 +1,53 @@
-# Astro Starter Kit: Minimal
+[Live Link](https://techdhara047.github.io/)
 
-```sh
-npm create astro@latest -- --template minimal
+# TechDhara
+We are a team of web developers dedicated to crafting modern, responsive, and visually appealing websites. Specializing in custom solutions, we tailor each project to meet the unique needs of our clients. Whether you're a small business or a growing brand, we're here to help you build a strong online presence with user-friendly designs and cutting-edge technology.
+
+## About us
+<img src='./screenshots/1.png'>
+
+## Our Team
+<img src='./screenshots/2.png'>
+
+## Services
+<img src='./screenshots/3.png'>
+
+## Our work
+<img src='./screenshots/4.png'>
+
+## contact us
+<img src='./screenshots/5.png'>
+
+## Tech Stack
+- Astro
+- CSS
+- JavaScript
+
+
+## How to use
+
+1. Clone the repo
+
+```bash
+git clone https://github.com/techdhara047
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+2. Install dependencies
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+npm install
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+3. Start the dev server
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```bash
+npm run dev
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Contributing
 
-## 🧞 Commands
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-All commands are run from the root of the project, from a terminal:
+## License
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-"# company-portfolio" 
-"# techdhara" 
-"# techdhara" 
+This project is open source and available under the [MIT License](LICENSE).
